@@ -1,0 +1,32 @@
+<h1>Projects</h1>
+
+<app-project-form (addProject)="addProject($event)"></app-project-form>
+<app-project-list
+  [projects]="projects$ | async"
+  [selectedProject]="selectedProject$ | async"
+  (deleteProject)="deleteProject($event)"
+  (selectProject)="selectProject($event)"
+></app-project-list>
+
+<!-- <div *ngIf="projects$ | async as projects">
+  {{projects | json}}
+</div> -->
+
+<!-- <div style="margin: auto;">
+  <h1 style="text-align: center;">USER DETAILS FROM API</h1>
+  <ul *ngIf="projects$ | async as projects">
+    <li *ngFor="let item of projects">{{item}}</li>
+  </ul>
+</div> -->
+
+<!-- <div style="margin: auto;">
+  <h1 style="text-align: center;">USER DETAILS FROM API</h1>
+  <ul *ngIf="projects$ | async | keyvalue as projects">
+    <li *ngFor="let item of projects">{{item | json}}</li>
+  </ul>
+</div> -->
+
+<!--
+<app-project-list *ngIf="!(spinner$ | async)" [projects]="projects$ | async" (deleteProject)="deleteProject($event)"></app-project-list>
+<div *ngIf="spinner$ | async">loading..</div>
+-->
